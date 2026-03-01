@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5531998732853";
+    const phoneNumber = "5531987393955";
     const message = "Olá! Vi o site da MMV e busco uma operação de transporte que resolva meus gargalos do dia a dia com mais agilidade. Podemos conversar?";
     
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
