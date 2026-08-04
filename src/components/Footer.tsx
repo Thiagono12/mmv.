@@ -43,7 +43,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>(31) 99873-2853 </span>
+                <span>(31) 99148-9855</span>
               </li>
             </ul>
           </motion.div>
