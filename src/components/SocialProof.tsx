@@ -2,14 +2,12 @@ import { motion } from "framer-motion";
 
 // 1. IMPORTS DAS IMAGENS
 import Logottx from "@/assets/ttxrender.png";
-import LogoIg from "@/assets/IGrender.png";
-import LogoValenorte from "@/assets/valenorterender.png";
+import LogoAg from "@/assets/aglogo.png";
 
 // 2. LISTA DE CLIENTES
 const clients = [
   { name: "TTX", logo: Logottx },
-  { name: "IG", logo: LogoIg },
-  { name: "Valenorte", logo: LogoValenorte },
+  { name: "AG", logo: LogoAg },
 ];
 
 const SocialProof = () => {
@@ -30,24 +28,19 @@ const SocialProof = () => {
 
         {/* Logo Carousel (Infinito) */}
         <div className="overflow-hidden mask-gradient-x">
-          {/* AQUI MUDAMOS A VELOCIDADE 👇 */}
-          {/* Adicionei style={{ animationDuration: "15s" }} para forçar mais velocidade */}
-          <div 
-            className="flex animate-scroll pause-animation items-center"
-            style={{ animationDuration: "15s" }} 
+          <div
+            className="flex animate-scroll pause-animation items-center w-max"
+            style={{ animationDuration: "18s" }}
           >
-            {/* Repetimos a lista 6 vezes para cobrir telas grandes */}
             {[...clients, ...clients, ...clients, ...clients, ...clients, ...clients].map((client, index) => (
               <div
-                key={index}
-                className="flex-shrink-0 mx-8 md:mx-14 group"
+                key={`${client.name}-${index}`}
+                className="flex-shrink-0 mx-4 sm:mx-8 md:mx-14 group"
               >
                 <img
                   src={client.logo}
                   alt={client.name}
-                  // AQUI MUDAMOS O TAMANHO 👇
-                  // De h-16 md:h-24 para h-20 md:h-32
-                  className="h-20 md:h-32 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                  className="h-16 sm:h-20 md:h-32 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
                 />
               </div>
             ))}
@@ -60,4 +53,3 @@ const SocialProof = () => {
 };
 
 export default SocialProof;
-//so pra dar commit

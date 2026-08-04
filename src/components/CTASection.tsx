@@ -1,16 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/contact";
 
 const CTASection = () => {
-  // FUNÇÃO DO WHATSAPP
   const handleWhatsAppClick = () => {
-    // 👇 NUMERO DO ZAPZAP E A MSG, USA O FSTR PARA CASO QUEIRA MUDAR A MSG
-    const phoneNumber = "55319987393955"; 
-    
-    const message = "Olá! Vi o site da MMV e busco uma operação de transporte que resolva meus gargalos do dia a dia com mais agilidade. Podemos conversar?";
-    
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
   };
 
   return (

@@ -2,17 +2,14 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoImage from "@/assets/mmvlogo.png";
+import { buildWhatsAppUrl } from "@/lib/contact";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5531987393955";
-    const message = "Olá! Vi o site da MMV e busco uma operação de transporte que resolva meus gargalos do dia a dia com mais agilidade. Podemos conversar?";
-    
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
   };
 
   useEffect(() => {
